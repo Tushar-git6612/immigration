@@ -14,8 +14,6 @@ function Index() {
             <div className="leftMargin px-3 transition">
                <section style={{marginTop:"60px"}}>
                   {!newAgent ? <Table func={newAgentChanger} /> : <Card />}
-                  {/* <Card /> */}
-                  {/* <Table /> */}
                </section>
             </div>
          </main>
