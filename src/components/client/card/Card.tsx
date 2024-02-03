@@ -19,11 +19,21 @@ function Card() {
     //     form.classList.add('was-validated');
     //   }else{
     //     form.classList.remove('was-validated');
-    //     // if (formIndex < 4) setFormIndex(formIndex + 1);
+    //     if (formIndex < 4) setFormIndex(formIndex + 1);
     //   }
     // })
     if (formIndex < 7) setFormIndex(formIndex + 1);
   }, [formIndex]);
+
+  const formType = [
+    {formName:"visa type",type:"type of visa",index:1,},
+    {formName:"personal details",type:"your name/email",index:2,},
+    {formName:"education details",type:"graduation/P.G",index:3,},
+    {formName:"rejection history",type:"visa history",index:4,},
+    {formName:"documents",type:"all document",index:5,},
+    {formName:"forms",type:"all form",index:6,},
+    {formName:"notes",type:"additional notes",index:7,},
+  ];
 
   const decFormIndex = useCallback(() => {
     if (formIndex >= 2) setFormIndex(formIndex - 1);
@@ -36,126 +46,27 @@ function Card() {
           className="row boxCard">
           <div className="col-sm-3 col-12 py-3">
             <div className="d-flex flex-column">
-              <div className="d-flex my-1 py-1 align-items-center">
-                <div className="d-flex justify-content-center align-items-center"> 
-                  <input type="checkbox" checked ={formIndex <= 1 ? false : true} className=" mt-0 form-check-input check" style={{ borderRadius: "50%", color: "#000000",width:"16px",height:"16px", border:`${formIndex === 1 ? '2px solid #0d6efd' : ""}` }} />
+              {formType.map((item)=> {
+                return (
+                  <div className="d-flex my-1 py-1 align-items-center">
+                  <div className="d-flex justify-content-center align-items-center"> 
+                    <input type="checkbox" checked ={formIndex <= item?.index ? false : true} className=" mt-0 form-check-input check" style={{ borderRadius: "50%", color: "#000000",width:"16px",height:"16px", border:`${formIndex == item?.index ? '2px solid #0d6efd' : ""}` }} />
+                  </div>
+                  <h3 className="ms-2 mb-0" style={{ color: "rgb(76 78 100 / 87%)" }} >
+                    <span className="me-1">0</span>
+                    <span>{item?.index}</span>
+                  </h3>
+                  <div className="d-flex ms-2 flex-column align-items-start">
+                    <span className="text-capitalize" style={{ color: "rgb(76 78 100 / 87%)", fontWeight: "500" }}>
+                      {item?.formName}
+                    </span>
+                    <span style={{ fontSize: "10px", color: "rgb(76 78 100 / 60%)", fontWeight: "500",}} className="text-capitalize">
+                      {item?.type}
+                    </span>
+                  </div>
                 </div>
-                <h3 className="ms-2 mb-0" style={{ color: "rgb(76 78 100 / 87%)" }} >
-                  <span className="me-1">0</span>
-                  <span>1</span>
-                </h3>
-                <div className="d-flex ms-2 flex-column align-items-start">
-                  <span className="text-capitalize" style={{ color: "rgb(76 78 100 / 87%)", fontWeight: "500" }}>
-                    visa type
-                  </span>
-                  <span style={{ fontSize: "10px", color: "rgb(76 78 100 / 60%)", fontWeight: "500",}} className="text-capitalize">
-                    type of visa
-                  </span>
-                </div>
-              </div>
-              <div className="d-flex my-1 py-1 align-items-center">
-                <div className="d-flex justify-content-center align-items-center" >
-                  <input type="checkbox"  checked ={formIndex <= 2 ? false : true} className=" mt-0 form-check-input check" style={{ borderRadius: "50%", color: "#000000",width:"16px",height:"16px", border:`${formIndex === 2 ? '2px solid #0d6efd' : ""}` }}/>
-                </div>
-                <h3 className="ms-2 mb-0" style={{ color: "rgb(76 78 100 / 87%)" }}>
-                  <span className="me-1">0</span>
-                  <span>2</span>
-                </h3>
-                <div className="d-flex ms-2 flex-column align-items-start">
-                  <span className="text-capitalize" style={{ color: "rgb(76 78 100 / 87%)", fontWeight: "500" }}>
-                    personal details
-                  </span>
-                  <span style={{ fontSize: "10px", color: "rgb(76 78 100 / 60%)", fontWeight: "500",}} className="text-capitalize">
-                    your name/email
-                  </span>
-                </div>
-              </div>
-              <div className="d-flex my-1 py-1 align-items-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <input type="checkbox" checked ={formIndex <= 3 ? false : true} className=" mt-0 form-check-input check" style={{ borderRadius: "50%", color: "#000000",width:"16px",height:"16px", border:`${formIndex === 3 ? '2px solid #0d6efd' : ""}` }}/>
-                </div>
-                <h3 className="ms-2 mb-0" style={{ color: "rgb(76 78 100 / 87%)" }}>
-                  <span className="me-1">0</span>
-                  <span>3</span>
-                </h3>
-                <div className="d-flex ms-2 flex-column align-items-start">
-                  <span className="text-capitalize" style={{ color: "rgb(76 78 100 / 87%)", fontWeight: "500" }}>
-                    education details
-                  </span>
-                  <span style={{ fontSize: "10px", color: "rgb(76 78 100 / 60%)", fontWeight: "500",}} className="text-capitalize">
-                    graduation/P.G
-                  </span>
-                </div>
-              </div>
-              <div className="d-flex my-1 py-1 align-items-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <input type="checkbox" checked ={formIndex <= 4 ? false : true} className=" mt-0 form-check-input check" style={{ borderRadius: "50%", color: "#000000",width:"16px",height:"16px", border:`${formIndex === 4 ? '2px solid #0d6efd' : ""}` }}/>
-                </div>
-                <h3 className="ms-2 mb-0" style={{ color: "rgb(76 78 100 / 87%)" }}>
-                  <span className="me-1">0</span>
-                  <span>4</span>
-                </h3>
-                <div className="d-flex ms-2 flex-column align-items-start">
-                  <span className="text-capitalize" style={{ color: "rgb(76 78 100 / 87%)", fontWeight: "500" }}>
-                    rejection history
-                  </span>
-                  <span style={{ fontSize: "10px", color: "rgb(76 78 100 / 60%)", fontWeight: "500",}} className="text-capitalize">
-                    visa history
-                  </span>
-                </div>
-              </div>
-              <div className="d-flex my-1 py-1 align-items-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <input type="checkbox" checked ={formIndex <= 5 ? false : true} className=" mt-0 form-check-input check" style={{ borderRadius: "50%", color: "#000000",width:"16px",height:"16px", border:`${formIndex === 5 ? '2px solid #0d6efd' : ""}` }}/>
-                </div>
-                <h3 className="ms-2 mb-0" style={{ color: "rgb(76 78 100 / 87%)" }}>
-                  <span className="me-1">0</span>
-                  <span>5</span>
-                </h3>
-                <div className="d-flex ms-2 flex-column align-items-start">
-                  <span className="text-capitalize" style={{ color: "rgb(76 78 100 / 87%)", fontWeight: "500" }}>
-                    documents
-                  </span>
-                  <span style={{ fontSize: "10px", color: "rgb(76 78 100 / 60%)", fontWeight: "500",}} className="text-capitalize" >
-                    all document
-                  </span>
-                </div>
-              </div>
-              <div className="d-flex my-1 py-1 align-items-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <input type="checkbox" checked ={formIndex <= 6 ? false : true} className=" mt-0 form-check-input check" style={{ borderRadius: "50%", color: "#000000",width:"16px",height:"16px", border:`${formIndex === 6 ? '2px solid #0d6efd' : ""}` }}/>
-                </div>
-                <h3 className="ms-2 mb-0" style={{ color: "rgb(76 78 100 / 87%)" }}>
-                  <span className="me-1">0</span>
-                  <span>6</span>
-                </h3>
-                <div className="d-flex ms-2 flex-column align-items-start">
-                  <span className="text-capitalize" style={{ color: "rgb(76 78 100 / 87%)", fontWeight: "500" }}>
-                    forms
-                  </span>
-                  <span style={{ fontSize: "10px", color: "rgb(76 78 100 / 60%)", fontWeight: "500", }} className="text-capitalize">
-                    all forms
-                  </span>
-                </div>
-              </div>
-              <div className="d-flex my-1 py-1 align-items-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <input type="checkbox" checked ={formIndex <= 7 ? false : true} className=" mt-0 form-check-input check" style={{ borderRadius: "50%", color: "#000000",width:"16px",height:"16px", border:`${formIndex === 7 ? '2px solid #0d6efd' : ""}` }}/>
-                </div>
-                <h3 className="ms-2 mb-0" style={{ color: "rgb(76 78 100 / 87%)" }}
-                >
-                  <span className="me-1">0</span>
-                  <span>7</span>
-                </h3>
-                <div className="d-flex ms-2 flex-column align-items-start">
-                  <span className="text-capitalize" style={{ color: "rgb(76 78 100 / 87%)", fontWeight: "500" }}>
-                    Notes
-                  </span>
-                  <span style={{ fontSize: "10px", color: "rgb(76 78 100 / 60%)", fontWeight: "500",}} className="text-capitalize">
-                    additional notes
-                  </span>
-                </div>
-              </div>
+                )                
+              })}
             </div>
           </div>
           <div className="col-sm-9 col-12 p-3" style={{ borderLeft: "1px solid rgb(76 78 100 / 12%)" }}>
