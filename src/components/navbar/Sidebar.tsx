@@ -9,7 +9,7 @@ function Sidebar() {
         backgroundColor: isActive ? "black" : "none",
       };
   };
-// 
+  
   const asideToggle = () => {
     const aside: any = document.querySelector(".sideBar");
     aside.classList.toggle("toggle");
@@ -99,7 +99,7 @@ function Sidebar() {
                 clients
               </NavLink>
             </li>
-            {/* <li className="text-capitalize mt-1" style={{ listStyle: "none" }}>
+            <li className="text-capitalize mt-1" style={{ listStyle: "none" }}>
               <NavLink to="/chat" className="p-2 d-flex align-items-center" style={navLinkStyles}>
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-chat-left me-2" viewBox="0 0 16 16"
@@ -109,8 +109,8 @@ function Sidebar() {
                 </span>{" "}
                 chat
               </NavLink>
-            </li> */}
-            <li className="text-capitalize mt-1" style={{ listStyle: "none" }}>
+            </li>
+            {/* <li className="text-capitalize mt-1" style={{ listStyle: "none" }}>
               <NavLink to="/calender" className="p-2 d-flex align-items-center" style={navLinkStyles}>
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-calendar me-2" viewBox="0 0 16 16"
@@ -120,7 +120,7 @@ function Sidebar() {
                 </span>{" "}
                 calender
               </NavLink>
-            </li>
+            </li> */}
             <li className="text-capitalize mt-1" style={{ listStyle: "none" }}>
               <NavLink
                 to="/agent"
