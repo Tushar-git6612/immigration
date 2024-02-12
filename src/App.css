@@ -129,3 +129,9 @@ table td{
   box-shadow: 0px 0px 3px #E0E0E4;
   border-radius: 8px;
 }
+
+.chatBtn .blackbtn{
+  padding: 5px 14px;
+  font-weight: 400;
+  box-shadow: 0px 0px 4px;
+}
