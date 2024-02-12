@@ -1,4 +1,5 @@
 import {Fragment,memo} from 'react';
+import Userchat from "./chat/Index";
 
 function Index() {
   return (
@@ -33,24 +34,9 @@ function Index() {
                               </span>
                            </div>
                         </div>
-            <div className="col-12 px-2 py-2">
-               <div className="row">
-                  <div className="col-12 d-flex justify-content-end align-items-center">
-                     <div className='d-flex align-items-center'>
-                        <p className='px-2 py-2 mb-0 me-2' style={{backgroundColor:"#000",color:"#FFFF", fontSize:"10px",borderRadius:"6px"}}>how can we help? we're here for you</p>
-                        <div className="d-flex align-items-center" style={{ width: "35px", height: "35px", borderRadius: "50%",cursor:"pointer" }}>
-                           <img src={ process.env.PUBLIC_URL +"/images/u3.jpg"} style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", textAlign: "center", objectPosition: "center",}} alt=""/>
-                        </div>  
-                     </div>
-                  </div>
-                  <div className="col-12 mt-3 d-flex justify-content-start align-items-center">
-                     <div className="d-flex align-items-center" style={{ width: "35px", height: "35px", borderRadius: "50%",cursor:"pointer" }}>
-                        <img src={ process.env.PUBLIC_URL +"/images/u2.jpg"} style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", textAlign: "center", objectPosition: "center",}} alt=""/>
-                     </div> 
-                     <p className='px-2 py-2 mb-0 ms-2' style={{backgroundColor:"#FFF",color:"#000", fontSize:"10px",borderRadius:"6px"}}>hey john i am looking for the best admi template.could you please help to find it out?</p>
-                  </div>
-               </div>
-            </div>
+                        <div className="col-12 px-2 py-2">
+                           <Userchat />
+                        </div>
             <div className="col-12"></div>
          </div>
     </Fragment>
