@@ -8,6 +8,7 @@ import Dashboard from "./components/dashboard/Index";
 import Client from "./components/client/Index";
 import Agent from "./components/agent/Index";
 import Calender from "./components/calender/Index";
+import Chat from "./components/chat/Index";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/addClients' element={<Client/>} />
         <Route path='/agent' element ={<Agent/>}  />
         <Route path='/calender' element ={<Calender />} />
+        <Route path='/chat' element={<Chat />} />
       </Route>
         <Route path = '/Signup' element = {<Signup/>}/>
         <Route path = '/Login' element = {<Login/>}/>
