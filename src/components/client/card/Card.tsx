@@ -46,9 +46,9 @@ function Card() {
           className="row boxCard">
           <div className="col-sm-3 col-12 py-3">
             <div className="d-flex flex-column">
-              {formType.map((item)=> {
+              {formType.map((item,index)=> {
                 return (
-                  <div className="d-flex my-1 py-1 align-items-center">
+                  <div className="d-flex my-1 py-1 align-items-center" key={index}>
                   <div className="d-flex justify-content-center align-items-center"> 
                     <input type="checkbox" checked ={formIndex <= item?.index ? false : true} className=" mt-0 form-check-input check" style={{ borderRadius: "50%", color: "#000000",width:"16px",height:"16px", border:`${formIndex == item?.index ? '2px solid #0d6efd' : ""}` }} />
                   </div>

@@ -7,7 +7,7 @@ function Index() {
     <Fragment>
       <div className='boxCard'>
          <div className="row mx-0 py-3">
-             <div className="col-3">
+             <div className="col-3 px-3">
                 <Events />
              </div>
             <div className="col-9">
